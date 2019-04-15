@@ -1,0 +1,37 @@
+﻿@* @model 指令 *@
+@*@using Demo.Web.Model*@
+@*@model IEnumerable<Student>*@
+@using Demo.Web.ViewModels
+@model HomeIndexViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        body, ul, li, h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student集合</h1>
+    <ul>
+        @foreach (var item in Model.Students)
+        {
+            <li>@item.Name (@item.Age) <a asp-action="Detail" asp-route-id="@item.Id">详情 Tag</a></li>
+        }
+    </ul>
+    <div>
+        <a asp-action="Create">创建一个学生</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿@model Demo.Web.Model.Student
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <h1>学生信息</h1>
+    <div>ID:@Model.Id</div>
+    <div>姓名:@Model.LastName@Model.FirstName</div>
+    <div>性别:@Model.Gender</div>
+    <div>出生日期:@Model.BirthDate</div>
+    <a asp-action="Index">返回到Home</a>
+</body>
+</html>
